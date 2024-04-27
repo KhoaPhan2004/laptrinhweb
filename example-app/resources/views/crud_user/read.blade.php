@@ -100,14 +100,8 @@
         </div>
 
     </div>
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Lập trình web @ 01/2024</p>
-        </div>
-    </footer>
-</section>
 
-<div class="container">
+    <div class="container">
     <div class="row">
         <h4>Profile (1-1)</h4>
         First name : {{$messi->profile->first_name}} <br>
@@ -151,4 +145,11 @@
     </div>
 </div>
 
+
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Lập trình web @ 01/2024</p>
+        </div>
+    </footer>
+</section>
 @endsection

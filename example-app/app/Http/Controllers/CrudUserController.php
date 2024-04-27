@@ -166,8 +166,6 @@ class CrudUserController extends Controller
     return redirect("list")->withSuccess('update thành công');
 }
 
-    
-
 
     /**
      * List of users

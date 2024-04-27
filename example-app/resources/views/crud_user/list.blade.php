@@ -95,29 +95,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <!-- so thich -->
-
-            <p>Danh Sách so thich</p>
-            <table style="border: 3px solid black;">
-                <thead>
-                    <tr>
-                        <th style="border: 3px solid black; background-color: lightgray;">ID</th>
-                        <th style="border: 3px solid black; background-color: lightgray;">Name</th>
-                        <th style="border: 3px solid black; background-color: lightgray;">mo ta</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($users as $user)
-                    <tr>
-                        <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            
 
             <div class="pagination">
                 {{$users->links()}}
