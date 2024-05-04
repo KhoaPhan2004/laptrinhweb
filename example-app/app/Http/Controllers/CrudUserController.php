@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Posts;
 use Hash;
 use Session;
 use App\Models\User;
@@ -112,9 +113,26 @@ class CrudUserController extends Controller
     public function deleteUser(Request $request)
     {
         $user_id = $request->get('id');
-        $user = User::destroy($user_id);
+
+        $isDelete = false;
+        //Check existing post
+        $post = Posts::where('user_id', '=', $user_id)->first();
+
+        //Check existing favorite
+        $favorities = User::find($user_id)->favorities;
+
+        if (empty ($post) && $favorities->isEmpty()) {
+            $isDelete = true;
+        }
+
+        if ($isDelete) {
+            $user = User::destroy($user_id);
+            return redirect("list")->withSuccess('Bạn đã xóa thành công!!');
+        } else {
+            return redirect("list")->withSuccess('Delete not ok');
+        }
     
-        return redirect("list")->withSuccess('Bạn đã xóa thành công!!');
+        
     }
 
     /**
@@ -183,6 +201,7 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
+    
 
     /**
      * Sign out

@@ -96,6 +96,7 @@
                 </tbody>
             </table>
             
+            
 
             <div class="pagination">
                 {{$users->links()}}
@@ -104,9 +105,5 @@
         </div>
     </div>
 </main>
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Lập trình web @ 01/2024</p>
-    </div>
-</footer>
+
 @endsection
